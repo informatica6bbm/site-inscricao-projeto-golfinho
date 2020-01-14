@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router();
 
 const index = require('./routes/index');
-const pessoa = require('./routes/pessoa-routes');
+// const pessoa = require('./routes/pessoa-routes');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit: 1000000}));
@@ -22,6 +22,6 @@ app.use(express.static('./public'));
 //  });
 
 app.use('/', index);
-app.use('/pessoa', pessoa);
+// app.use('/pessoa', pessoa);
 
 module.exports = app;
