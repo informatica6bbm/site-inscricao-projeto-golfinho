@@ -207,7 +207,7 @@
                                     <p align="justify">
                                         &nbsp;&nbsp;&nbsp;&nbsp;O Projeto Golfinho é uma ferramenta de conscientização e prevenção sobre os perigos que o meio aquático representa, abordando também temas como cidadania e meio ambiente. É destinado a crianças e adolescentes entre 08 (oito) e 14 (quatorze) anos com a carga horária total de 08 (oito) horas aula.
                                         <br>&nbsp;&nbsp;&nbsp;&nbsp;O projeto contempla atividades  teóricas e Prática.
-                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;O participantes após efetivar sua inscrição de forma gratuita recebe no dia da atividade um kit com Regata, Boné, Sacochila, toalha de Banho, Material de instrução e lanche.   O Projeto não tem fins lucrativos  e  é destinado a todas as crianças e adolescentes.
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;O participantes após efetivar sua inscrição de forma gratuita recebe no dia da atividade um kit com Regata, Boné, Sacochila, toalha, Material de instrução e lanche.   O Projeto não tem fins lucrativos  e  é destinado a todas as crianças e adolescentes.
                                     </p>
 
                                     <a href="#datas" class="btn btn-primary btn-sm" >Visualizar datas e Locais</a>
@@ -347,7 +347,7 @@
                         <div id="kitParticipante" >
                             <h3>Kit do Participante</h3>
                             <p>
-                                O participante do projeto golfinho  recebe no dia da atividade um kit com Regata, Boné, Sacochila, toalha de Banho, Material de instrução e lanche.
+                                O participante do projeto golfinho  recebe no dia da atividade um kit com Regata, Boné, Sacochila, toalha, Material de instrução e lanche.
                             </p>
 
                             <div id="blueimp-gallery-1" class="blueimp-gallery blueimp-gallery-controls">
@@ -484,29 +484,36 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-2 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label for="whatsapp">WhatsApp</label>
+                                        <label for="whatsapp">Número de telefone com WhatsApp do Responsável</label>
                                         <input id="whatsapp" v-model="whatsapp" v-mask="'(##) #####-####'" type="text" class="form-control form-control-sm">
                                     </div>
                                 </div>
 
-                                <div class="col-md-3 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="email">E-mail</label>
+                                        <input id="email" v-model="email" type="email" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12">
                                     <div class="form-group">
                                         <label for="bairro">Bairro/Comunidade</label>
                                         <input id="bairro" v-model="bairro" type="text" class="form-control form-control-sm">
                                     </div>
                                 </div>
 
-                                <div class="col-md-3 col-sm-12">
+                                <div class="col-md-5 col-sm-12">
                                     <div class="form-group">
                                         <label for="cidade">Cidade</label>
                                         <input id="cidade" v-model="cidade" type="text" class="form-control form-control-sm">
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
                                 <div class="col-md-2 col-sm-12">
                                     <div class="form-group">
                                         <label for="estado">Estado</label>
@@ -542,6 +549,10 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="row">
+
 
                                 <div class="col-md-5 col-sm-12">
                                     <div class="form-group">

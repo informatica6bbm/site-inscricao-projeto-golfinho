@@ -11,6 +11,7 @@ var app = new Vue({
         tamanhoRegata: "",
         nomeResponsavel: "",
         whatsapp: "",
+        email: "",
         bairro: "",
         cidade: "",
         estado: "",
@@ -43,6 +44,7 @@ var app = new Vue({
                 this.tamanhoRegata &&
                 this.nomeResponsavel &&
                 this.whatsapp &&
+                this.email &&
                 this.bairro &&
                 this.cidade &&
                 this.estado &&
@@ -78,6 +80,7 @@ var app = new Vue({
                 tamanhoRegata: this.tamanhoRegata,
                 nomeResponsavel: this.nomeResponsavel,
                 whatsapp: this.whatsapp,
+                email: this.email,
                 bairro: this.bairro,
                 cidade: this.cidade,
                 estado: this.estado,
@@ -103,6 +106,7 @@ var app = new Vue({
                     this.tamanhoRegata = "";
                     this.nomeResponsavel = "";
                     this.whatsapp = "";
+                    this.email = "";
                     this.bairro = "";
                     this.cidade = "";
                     this.estado = "";
