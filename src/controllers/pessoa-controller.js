@@ -1,7 +1,10 @@
 'use strict';
 
+const GoogleSpreadsheet = require('google-spreadsheet');
+const { promisify } = require('util');
+const creds = require('./../../client_secret.json');
+
 const Helpers = require('./../../helpers/helpers');
-const Pessoa = require('./../models/Pessoa');
 
 exports.post = (req, res, next) => {
     var nomeCompleto = req.body.nomeCompleto;
@@ -18,34 +21,45 @@ exports.post = (req, res, next) => {
     var deficiencia = req.body.deficiencia;
     var descricaoAtendimento = req.body.descricaoAtendimento;
 
-    var data = {
-        nomeCompleto: nomeCompleto,
-        documento: documento,
-        dataNascimento: dataNascimento,
-        idade: idade,
-        tamanhoRegata: tamanhoRegata,
-        nomeResponsavel: nomeResponsavel,
-        whatsapp: whatsapp,
-        bairro: bairro,
-        cidade: cidade,
-        estado: estado,
-        local: local,
-        deficiencia: deficiencia,
-        descricaoAtendimento: descricaoAtendimento,
-        createdAt: Helpers.getDataHoraAtual()
-    };
+    async function accessSpreadsheet(nomeCompleto, documento, dataNascimento, idade, tamanhoRegata, nomeResponsavel, whatsapp, bairro, cidade, estado, local, deficiencia, descricaoAtendimento) {
+            const doc = new GoogleSpreadsheet('1yx9hTSV8XR-byYUJpeZJTTThlLZY0yQFKAdHcnkM8as');
+            await promisify(doc.useServiceAccountAuth)(creds);
 
-    Pessoa.create(data).then(response => {
-        var pessoa = JSON.parse(JSON.stringify(response));
-        var resposta = "";
-        if(pessoa) {
-            resposta = true;
+            const info = await promisify(doc.getInfo)();
+            var sheet = info.worksheets[0];
+
+            for(var cont = 0; cont < info.worksheets.length; cont++){
+                if(info.worksheets[cont].title == "Inscritos"){
+                    sheet = info.worksheets[cont];
+                }
+            }
+
+            const rows = await promisify(sheet.getRows)({
+                offset: 1
+            });
+
+            const id = rows.length + 1;
+
+            const row = {
+                nomeCompleto: nomeCompleto,
+                documento: documento,
+                dataNascimento: dataNascimento,
+                idade: idade,
+                tamanhoRegata: tamanhoRegata,
+                nomeResponsavel: nomeResponsavel,
+                whatsapp: whatsapp,
+                bairro: bairro,
+                cidade: cidade,
+                estado: estado,
+                localProjeto: local,
+                deficiencia: deficiencia,
+                descricaoAtendimento: descricaoAtendimento,
+                dataHoraInscricao: Helpers.getDataHoraAtual()
+            };
+            await promisify(sheet.addRow)(row);
+
+            res.status(200).json({});
         }
 
-        if(!pessoa) {
-            resposta = false;
-        }
-
-        res.status(200).json(resposta);
-    });
+    accessSpreadsheet(nomeCompleto, documento, dataNascimento, idade, tamanhoRegata, nomeResponsavel, whatsapp, bairro, cidade, estado, local, deficiencia, descricaoAtendimento);
 }
