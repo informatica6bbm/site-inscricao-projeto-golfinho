@@ -27,7 +27,7 @@ var app = new Vue({
         msg: "",
     },
     created() {
-        axios.get('http://localhost:3000/pessoa/vagas').then(response => {
+        axios.get('https://projetogolfinho.herokuapp.com/pessoa/vagas').then(response => {
             this.clubes = response.data;
         });
     },
@@ -103,7 +103,7 @@ var app = new Vue({
                 descricaoAtendimento: this.descricaoAtendimento,
             };
             if(this.validaCampos()) {
-                axios.post('http://localhost:3000/pessoa', data).then(response => {
+                axios.post('https://projetogolfinho.herokuapp.com/pessoa', data).then(response => {
                     if(response.data.res) {
                         $('#modalAceite').modal('hide');
                         this.inscricaoSucesso = true;
@@ -132,7 +132,7 @@ var app = new Vue({
                     this.deficiencia = "";
                     this.descricaoAtendimento = "";
 
-                    axios.get('http://localhost:3000/pessoa/vagas').then(response => {
+                    axios.get('https://projetogolfinho.herokuapp.com/pessoa/vagas').then(response => {
                         this.clubes = response.data;
                     });
                 });
