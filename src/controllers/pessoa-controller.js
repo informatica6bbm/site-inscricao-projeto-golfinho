@@ -25,6 +25,7 @@ exports.get = (req, res, next) => {
             const qtdInscritosClube = await promisify(sheet.getRows)({
                 offset: 1
             });
+
             var clubeComVagas = [];
             var obj = {};
 
@@ -69,6 +70,7 @@ exports.post = (req, res, next) => {
             var resposta = false;
             const info = await promisify(doc.getInfo)();
             var sheet = info.worksheets[0];
+            var sheet1 = info.worksheets[0];
 
             for(var cont = 0; cont < info.worksheets.length; cont++){
                 if(info.worksheets[cont].title == "Inscritos"){
@@ -80,8 +82,18 @@ exports.post = (req, res, next) => {
                 offset: 1
             });
 
+            for(var cont = 0; cont < info.worksheets.length; cont++){
+                if(info.worksheets[cont].title == "QtdInscritosClube"){
+                    sheet1 = info.worksheets[cont];
+                }
+            }
+
+            const qtdInscritosClube = await promisify(sheet1.getRows)({
+                offset: 1
+            });
+
             function verificaCpfRg(cpf, rg){
-                for(var i = 0; i < rows.length; rows++) {
+                for(var i = 0; i < rows.length; i++) {
                     if(rows[i].cpf == cpf || rows[i].rg == rg){
                         return false;
                     }
@@ -91,8 +103,6 @@ exports.post = (req, res, next) => {
             }
 
             if(verificaCpfRg(cpf, rg)) {
-                const id = rows.length + 1;
-
                 const row = {
                     nomeCompleto: nomeCompleto,
                     cpf: cpf,
@@ -168,6 +178,15 @@ exports.post = (req, res, next) => {
                         console.log('Email enviado: ' + info.response);
                     }
                 });
+
+                for(var i = 0; i <  qtdInscritosClube.length; i++) {
+                    if( qtdInscritosClube[i].clube == local){
+                        qtdInscritosClube[i].qtdinscritos = parseInt(qtdInscritosClube[i].qtdinscritos) + 1;
+                        qtdInscritosClube[i].save();
+                        break;
+                    }
+                }
+
                 res.status(200).json({msg: 'Inscrição realizada com sucesso!', res: true});
             }
 
