@@ -6,7 +6,8 @@ var app = new Vue({
         nomeCompleto: "",
         documento: "",
         dataNascimento: "",
-        documento: "",
+        cpf: "",
+        rg: "",
         idade: "",
         tamanhoRegata: "",
         nomeResponsavel: "",
@@ -22,6 +23,13 @@ var app = new Vue({
         erroInscricao: false,
         erroCampos: false,
         exibeDescricaoAtendimento: false,
+        clubes: [],
+        msg: "",
+    },
+    created() {
+        axios.get('http://localhost:3000/pessoa/vagas').then(response => {
+            this.clubes = response.data;
+        });
     },
     watch: {
         deficiencia(val) {
@@ -38,7 +46,6 @@ var app = new Vue({
     methods: {
         validaCampos() {
             if( this.nomeCompleto &&
-                this.documento &&
                 this.dataNascimento &&
                 this.idade &&
                 this.tamanhoRegata &&
@@ -50,21 +57,27 @@ var app = new Vue({
                 this.estado &&
                 this.local
             ) {
-                var deficiencia = (this.deficiencia === 'true');
-                if(deficiencia) {
-                    this.erroCampos = false;
-                    if(this.descricaoAtendimento) {
-                        return true;
-                    }
-
-                    if(!this.descricaoAtendimento) {
-                        this.erroCampos = true;
-                        return false;
-                    }
+                if(!this.cpf && !this.rg){
+                    return false;
                 }
 
-                if(!deficiencia) {
-                    return true;
+                if(this.cpf && !this.rg || !this.cpf && this.rg || this.cpf && this.rg) {
+                    var deficiencia = (this.deficiencia === 'true');
+                    if(deficiencia) {
+                        this.erroCampos = false;
+                        if(this.descricaoAtendimento) {
+                            return true;
+                        }
+
+                        if(!this.descricaoAtendimento) {
+                            this.erroCampos = true;
+                            return false;
+                        }
+                    }
+
+                    if(!deficiencia) {
+                        return true;
+                    }
                 }
             }
             this.inscricaoSucesso = false;
@@ -74,7 +87,8 @@ var app = new Vue({
         inscrever() {
             var data = {
                 nomeCompleto: this.nomeCompleto,
-                documento:  this.documento,
+                cpf:  this.cpf,
+                rg: this.rg,
                 dataNascimento: this.dataNascimento,
                 idade: this.idade,
                 tamanhoRegata: this.tamanhoRegata,
@@ -90,17 +104,21 @@ var app = new Vue({
             };
             if(this.validaCampos()) {
                 axios.post('http://localhost:3000/pessoa', data).then(response => {
-                    if(response.data) {
+                    if(response.data.res) {
+                        $('#modalAceite').modal('hide');
                         this.inscricaoSucesso = true;
                         this.erroInscricao = false;
                     }
 
-                    if(!response.data) {
+                    if(!response.data.res) {
                         this.erroInscricao = true;
+                        this.msg = response.data.msg ? response.data.msg : "Erro ao realizar a inscrição!";
+                        $('#modalAceite').modal('hide');
                     }
 
                     this.nomeCompleto = "";
-                    this.documento = "";
+                    this.cpf = "";
+                    this.rg = "";
                     this.dataNascimento = "";
                     this.idade = "";
                     this.tamanhoRegata = "";
@@ -113,22 +131,21 @@ var app = new Vue({
                     this.local = "";
                     this.deficiencia = "";
                     this.descricaoAtendimento = "";
+
+                    axios.get('http://localhost:3000/pessoa/vagas').then(response => {
+                        this.clubes = response.data;
+                    });
                 });
+            }
+
+            if(!this.validaCampos()) {
+                $('#modalAceite').modal('hide');
             }
         },
     }
 });
 
 document.getElementById('links').onclick = function(event) {
-    event = event || window.event
-    var target = event.target || event.srcElement,
-    link = target.src ? target.parentNode : target,
-    options = { index: link, event: event },
-    links = this.getElementsByTagName('a')
-    blueimp.Gallery(links, options)
-}
-
-document.getElementById('links-1').onclick = function(event) {
     event = event || window.event
     var target = event.target || event.srcElement,
     link = target.src ? target.parentNode : target,

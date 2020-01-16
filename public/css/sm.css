@@ -1,0 +1,65 @@
+@media only screen and (max-width: 800px) {
+    #inscricao, #sobre, #datas, #kitParticipante {
+        width: 100%;
+        height: auto;
+    }
+
+    #kitParticipante {
+        width: 100%;
+        min-height: 750px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 45px;
+    }
+
+    .sobre-texto {
+        padding-top: 25px;
+        margin-bottom: 40px;
+    }
+
+    .sobre-imagem {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+    }
+
+    .sobre-imagem div {
+        width: 100%;
+    }
+
+    .sobre-imagem div img {
+        width: 100%;
+        padding-top: 40px;
+        margin-left: 12px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    .logo-foz-chapeco-sa {
+        padding-top: 10px;
+    }
+
+    .logo-foz-chapeco-sa img {
+        width: 100%;
+    }
+
+    .fia {
+        text-align: center;
+        font-size: 12px;
+        padding-right: 0px;
+        padding-top: 10px
+    }
+
+
+    .img-rodape {
+        width: 70%;
+        padding-top: 30px;
+    }
+
+    .devsite {
+        margin-bottom: 100px;
+        padding-bottom: 3px;
+    }
+}
