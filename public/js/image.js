@@ -82,10 +82,10 @@ var app = new Vue({
                     }
 
                     if(!deficiencia) {
-                        if(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13) {
+                        if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 13) {
                             return true;
                         }
-                        if(!(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13)) {
+                        if(!(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 13)) {
                             this.erroCampos = true;
                             return false;
                         }
@@ -120,6 +120,8 @@ var app = new Vue({
                         $('#modalAceite').modal('hide');
                         this.inscricaoSucesso = true;
                         this.erroInscricao = false;
+                        alert("Inscrição realizada com sucesso! você receberá um email de confimação de inscrição.");
+                        window.location.href = "#alert-sucesso";
                     }
 
                     if(!response.data.res) {

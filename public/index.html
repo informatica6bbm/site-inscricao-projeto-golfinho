@@ -307,11 +307,6 @@
                                     <td>08H - 12H</td>
                                 </tr>
                                 <tr>
-                                    <td >Goio-en</td>
-                                    <td>30/02/2020</td>
-                                    <td>08H - 17H</td>
-                                </tr>
-                                <tr>
                                     <td rowspan="2">Clube Caça e Pesca</td>
                                     <td>15/02/2020</td>
                                     <td>08H - 12H</td>
@@ -333,6 +328,11 @@
                                 <tr>
                                     <td>Clube Canchenerê</td>
                                     <td>29/02/2020</td>
+                                    <td>08H - 17H</td>
+                                </tr>
+                                <tr>
+                                    <td >Goio-en</td>
+                                    <td>01/03/2020</td>
                                     <td>08H - 17H</td>
                                 </tr>
                                 <tr>
@@ -415,7 +415,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12 col-sm-12">
+                                <div class="col-md-12 col-sm-12" id="alert-sucesso">
                                     <div v-if="inscricaoSucesso" class="alert alert-success" role="alert">
                                         Inscrição realizada com sucesso! você receberá um email de confimação de inscrição.
                                     </div>
@@ -433,7 +433,7 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label for="nomeCompleto">Nome completo</label>
+                                        <label for="nomeCompleto">Nome completo participante ( Criança / Adolecente ) </label>
                                         <input id="nomeCompleto" v-model="nomeCompleto" type="text" class="form-control form-control-sm">
                                     </div>
                                 </div>
