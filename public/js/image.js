@@ -66,7 +66,13 @@ var app = new Vue({
                     if(deficiencia) {
                         this.erroCampos = false;
                         if(this.descricaoAtendimento) {
-                            return true;
+                            if(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13) {
+                                return true;
+                            }
+                            if(!(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13)) {
+                                this.erroCampos = true;
+                                return false;
+                            }
                         }
 
                         if(!this.descricaoAtendimento) {
@@ -76,7 +82,13 @@ var app = new Vue({
                     }
 
                     if(!deficiencia) {
-                        return true;
+                        if(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13) {
+                            return true;
+                        }
+                        if(!(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13)) {
+                            this.erroCampos = true;
+                            return false;
+                        }
                     }
                 }
             }
