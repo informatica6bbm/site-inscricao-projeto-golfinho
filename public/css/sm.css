@@ -33,16 +33,15 @@
         margin-left: 12px;
     }
 
-    .logo {
-        width: 50%;
-    }
-
     .logo-foz-chapeco-sa {
         padding-top: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .logo-foz-chapeco-sa img {
         width: 100%;
+        height: 20vh;
     }
 
     .fia {
@@ -52,14 +51,22 @@
         padding-top: 10px
     }
 
-
     .img-rodape {
-        width: 70%;
+        width: 60%;
         padding-top: 30px;
     }
 
+    .img-md {
+        width: 100%;
+    }
+
+    .fundo-fia {
+        font-size: 12px;
+        margin-top: 10px;
+        color: white;
+    }
+
     .devsite {
-        /* margin-bottom: 100px; */
         padding-bottom: 3px;
     }
 }

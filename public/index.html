@@ -10,7 +10,8 @@
         <meta property="og:image" content="https://projetogolfinho.herokuapp.com/imagens/2.jpeg" />
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://unpkg.com/blueimp-gallery@2.27.0/css/blueimp-gallery.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/blueimp-gallery@2.27.0/css/blueimp-gallery.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css">
 
         <link href="css/mdb.min.css" rel="stylesheet">
         <link href="css/style.min.css" rel="stylesheet">
@@ -225,27 +226,27 @@
                                         </div>
 
                                         <div class="row justify-content-center">
-                                            <div class="col-md-3 col-4">
-                                                <img src="imagens/logocbmsc.png" class="logo"/>
+                                            <div class="col-md-3 col-sm-3 col-4">
+                                                <img src="imagens/logocbmsc.png" class="logo" style="width: 75%;"/>
                                             </div>
 
-                                            <div class="col-md-3 col-4">
-                                                <img src="imagens/brasao.png" class="logo" />
+                                            <div class="col-md-3 col-sm-3 col-4">
+                                                <img src="imagens/brasao.png" class="logo" style="width: 75%;"/>
                                             </div>
 
-                                            <div class="col-md-3 col-4">
-                                                <img src="imagens/logo_bc.png" class="logo"/>
+                                            <div class="col-md-3 col-sm-3 col-4">
+                                                <img src="imagens/logo_bc.png" class="logo" style="width: 75%;"/>
                                             </div>
 
                                             <div class="row justify-content-left">
-                                                <div class="col-md-4 col-4">
+                                                <div class="col-md-4 col-sm-3 col-4">
                                                     Apoiadores:
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-10 col-12 offset-md-1 logo-foz-chapeco-sa" >
+                                            <div class="col-md-10 col-sm-12 col-12 offset-md-1 logo-foz-chapeco-sa" >
                                                 <img src="imagens/logo_foz_chapeco_sa.jpg"/>
                                             </div>
                                         </div>
@@ -788,9 +789,9 @@
                                                 <h3 class="titulos-rodape" style="margin-left: -30px;">Apoiadores</h3>
                                                 <div class="container-fluid">
                                                     <div class="row">
-                                                        <div class="col-md-12 offset-md-1 col-12" >
-                                                            <img class="img-fluid" src="imagens/logo_foz_chapeco_sa.jpg" class="img-rodape img-md" style="width: 50%"/>
-                                                            <h3 style="font-size: 16px;margin-top: 10px;color:white">
+                                                        <div class="col-md-12 offset-md-1 col-12" style="padding-left: 0px;padding-right: 0px;">
+                                                            <img class="img-fluid img-md" src="imagens/logo_foz_chapeco_sa.jpg"/>
+                                                            <h3 class="fundo-fia">
                                                                 FUNDO DA INFÂNCIA E ADOLESCÊNCIA DE CHAPECÓ-FIA
                                                             </h3>
                                                         </div>
@@ -831,12 +832,17 @@
             </div>
 
         <script src="js/jquery-3.4.1.min.js"> </script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
-        <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-helper.js"></script>
+        <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+        <script src="js/axios.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <script src="js/vue.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script> -->
+        <script src="js/v-mask.min.js"></script>
+        <!-- <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-helper.js"></script> -->
+        <script type="text/javascript" src="js/blueimp-helper.js"></script>
         <script type="text/javascript" src="js/blueimp-gallery.js"></script>
-        <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery-fullscreen.js"></script>
+        <!-- <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery-fullscreen.js"></script> -->
+        <script type="text/javascript" src="js/blueimp-gallery-fullscreen.js"></script>
 
         <script src="js/image.js"></script>
         <script type="text/javascript" src="js/fontawesome/all.js"></script>

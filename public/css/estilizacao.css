@@ -55,10 +55,6 @@ body {
     width: 100%;
 }
 
-#links-1 div div div a img {
-    width: 180px;
-}
-
 .image {
     float: left;
     background-size: cover;
