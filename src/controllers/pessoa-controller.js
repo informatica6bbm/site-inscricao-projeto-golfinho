@@ -195,7 +195,10 @@ exports.post = (req, res, next) => {
                 resposta = false;
             }
 
-            res.status(200).json({msg: msg, res: resposta});
+            res.status(200).json({
+                msg: msg,
+                res: resposta,
+            });
         }
 
     accessSpreadsheet(nomeCompleto, cpf, rg, dataNascimento, idade, tamanhoRegata, nomeResponsavel, whatsapp, email, bairro, cidade, estado, local, deficiencia, descricaoAtendimento);
