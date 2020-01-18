@@ -66,10 +66,12 @@ var app = new Vue({
                     if(deficiencia) {
                         this.erroCampos = false;
                         if(this.descricaoAtendimento) {
-                            if(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13) {
+                            // parsInt(this.idade) >= 8 &&
+                            if(parsInt(this.idade) <= 13) {
                                 return true;
                             }
-                            if(!(parsInt(this.idade) >= 8 && parsInt(this.idade) <= 13)) {
+                            // parsInt(this.idade) >= 8 && 
+                            if(!(parsInt(this.idade) <= 13)) {
                                 this.erroCampos = true;
                                 return false;
                             }
@@ -82,10 +84,12 @@ var app = new Vue({
                     }
 
                     if(!deficiencia) {
-                        if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 13) {
+                        // parseInt(this.idade) >= 8 &&
+                        if(parseInt(this.idade) <= 13) {
                             return true;
                         }
-                        if(!(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 13)) {
+                        // !(parseInt(this.idade) >= 8 &&
+                        if(parseInt(this.idade) <= 13)) {
                             this.erroCampos = true;
                             return false;
                         }
