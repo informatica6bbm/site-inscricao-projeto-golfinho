@@ -70,7 +70,7 @@ var app = new Vue({
                             if(parsInt(this.idade) <= 13) {
                                 return true;
                             }
-                            // parsInt(this.idade) >= 8 && 
+                            // parsInt(this.idade) >= 8 &&
                             if(!(parsInt(this.idade) <= 13)) {
                                 this.erroCampos = true;
                                 return false;
@@ -89,7 +89,7 @@ var app = new Vue({
                             return true;
                         }
                         // !(parseInt(this.idade) >= 8 &&
-                        if(parseInt(this.idade) <= 13)) {
+                        if(!parseInt(this.idade) <= 13) {
                             this.erroCampos = true;
                             return false;
                         }
