@@ -93,9 +93,25 @@ exports.post = (req, res, next) => {
             });
 
             function verificaCpfRg(cpf, rg){
+                // console.log("CPF: " + cpf + "  RG: " + rg);
+
                 for(var i = 0; i < rows.length; i++) {
-                    if(rows[i].cpf == cpf || rows[i].rg == rg){
-                        return false;
+                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
+                        if(rows[i].cpf == cpf || rows[i].rg == rg){
+                            return false;
+                        }
+                    }
+
+                    if(cpf.localeCompare("") == 0 && rg.localeCompare("") != 0){
+                        if(rows[i].rg == rg){
+                            return false;
+                        }
+                    }
+
+                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") == 0){
+                        if(rows[i].cpf == cpf){
+                            return false;
+                        }
                     }
                 }
 
