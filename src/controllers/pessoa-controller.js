@@ -46,6 +46,42 @@ exports.get = (req, res, next) => {
     accessSpreadsheet();
 }
 
+exports.avaliar = (req, res, next) => {
+    var pergunta1 = req.body.pergunta1;
+    var pergunta2 = req.body.pergunta2;
+    var pergunta3 = req.body.pergunta3;
+    var pergunta4 = req.body.pergunta4;
+    var sugestao = req.body.sugestao;
+    
+    async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao) {
+        const doc = new GoogleSpreadsheet('1yx9hTSV8XR-byYUJpeZJTTThlLZY0yQFKAdHcnkM8as');
+        await promisify(doc.useServiceAccountAuth)(creds);
+        const info = await promisify(doc.getInfo)();
+        var sheet = info.worksheets[0];
+        var sheet1 = info.worksheets[0];
+
+        for(var cont = 0; cont < info.worksheets.length; cont++){
+            if(info.worksheets[cont].title == "Avaliações"){
+                sheet = info.worksheets[cont];
+            }
+        }
+
+        var row = {
+            pergunta1: pergunta1,
+            pergunta2: pergunta2,
+            pergunta3: pergunta3,
+            pergunta4: pergunta4,
+            sugestao: sugestao
+        }
+
+        await promisify(sheet.addRow)(row);
+
+        res.status(200).json(true);
+    }
+
+    accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao);
+}
+
 exports.post = (req, res, next) => {
     var nomeCompleto = req.body.nomeCompleto;
     var cpf = req.body.cpf;
@@ -93,7 +129,6 @@ exports.post = (req, res, next) => {
             });
 
             function verificaCpfRg(cpf, rg){
-                // console.log("CPF: " + cpf + "  RG: " + rg);
 
                 for(var i = 0; i < rows.length; i++) {
                     if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
