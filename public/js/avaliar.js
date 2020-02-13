@@ -37,7 +37,7 @@ var app = new Vue({
                     sugestao: this.sugestao
                 }
 
-                axios.post('https://projetogolfinho6bbm.heroku.com/pessoa/avaliar', data).then(response => {
+                axios.post('https://projetogolfinho6bbm.herokuapp.com/pessoa/avaliar', data).then(response => {
                     if(response.data){
                         this.exibeFormulario = false;
                     }
