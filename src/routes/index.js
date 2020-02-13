@@ -1,8 +1,13 @@
 'use strict';
-// https://sequelize.org/master/manual/getting-started.html
+
 const express = require('express');
 const router = express.Router();
 const controller = require('./../controllers/index');
 const path = require('path');
+
+router.get('/campeche', controller.campeche);
+router.get('/aabb', controller.aabb);
+router.get('/crc', controller.crc);
+router.get('/industrial', controller.industrial);
 
 module.exports = router;
