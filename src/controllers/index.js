@@ -4,6 +4,10 @@ const express = require('express');
 const router = express.Router();
 var path = require('path');
 
+exports.fotos = (req, res, next) => {
+	res.sendFile(path.resolve('public/fotos.html'));
+}
+
 exports.campeche = (req, res, next) => {
     res.sendFile(path.resolve('public/campeche.html'));
 }

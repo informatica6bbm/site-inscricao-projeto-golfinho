@@ -5,6 +5,7 @@ const router = express.Router();
 const controller = require('./../controllers/index');
 const path = require('path');
 
+router.get('/fotos', controller.fotos);
 router.get('/campeche', controller.campeche);
 router.get('/aabb', controller.aabb);
 router.get('/crc', controller.crc);
