@@ -23,3 +23,11 @@ exports.crc = (req, res, next) => {
 exports.industrial = (req, res, next) => {
     res.sendFile(path.resolve('public/industrial.html'));
 }
+
+exports.caramuru = (req, res, next) => {
+    res.sendFile(path.resolve('public/caramuru.html'));
+}
+
+exports.campestre = (req, res, next) => {
+    res.sendFile(path.resolve('public/campestre.html'));
+}

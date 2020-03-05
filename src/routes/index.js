@@ -10,5 +10,7 @@ router.get('/campeche', controller.campeche);
 router.get('/aabb', controller.aabb);
 router.get('/crc', controller.crc);
 router.get('/industrial', controller.industrial);
+router.get('/caramuru', controller.industrial);
+router.get('/campestre', controller.industrial);
 
 module.exports = router;
