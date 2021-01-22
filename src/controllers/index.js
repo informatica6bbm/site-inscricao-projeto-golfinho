@@ -31,3 +31,6 @@ exports.caramuru = (req, res, next) => {
 exports.campestre = (req, res, next) => {
     res.sendFile(path.resolve('public/campestre.html'));
 }
+exports.chapeco = (req, res, next) => {
+    res.sendFile(path.resolve('public/chapeco.html'));
+}
