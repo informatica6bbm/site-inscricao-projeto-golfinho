@@ -10,7 +10,7 @@ const Helpers = require('./../../helpers/helpers');
 
 exports.get = (req, res, next) => {
     async function accessSpreadsheet() {
-            const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo/edit?usp=sharing');
+            const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
             await promisify(doc.useServiceAccountAuth)(creds);
 
             const info = await promisify(doc.getInfo)();
@@ -54,7 +54,7 @@ exports.avaliar = (req, res, next) => {
     var sugestao = req.body.sugestao;
     
     async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao) {
-        const doc = new GoogleSpreadsheet('1yx9hTSV8XR-byYUJpeZJTTThlLZY0yQFKAdHcnkM8as');
+        const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
         await promisify(doc.useServiceAccountAuth)(creds);
         const info = await promisify(doc.getInfo)();
         var sheet = info.worksheets[0];
@@ -100,7 +100,7 @@ exports.post = (req, res, next) => {
     var descricaoAtendimento = req.body.descricaoAtendimento;
 
     async function accessSpreadsheet(nomeCompleto, cpf, rg, dataNascimento, idade, tamanhoRegata, nomeResponsavel, whatsapp, email, bairro, cidade, estado, local, deficiencia, descricaoAtendimento) {
-            const doc = new GoogleSpreadsheet('1yx9hTSV8XR-byYUJpeZJTTThlLZY0yQFKAdHcnkM8as');
+            const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
             await promisify(doc.useServiceAccountAuth)(creds);
             var msg = "";
             var resposta = false;
