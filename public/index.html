@@ -468,7 +468,7 @@
                                 <div class="col-md-2 col-sm-12">
                                     <div class="form-group">
                                         <label for="rg">RG</label>
-                                        <input id="rg" v-model="rg" v-mask="'###.###.###-##'" type="text" class="form-control form-control-sm">
+                                        <input id="rg" v-model="rg" v-mask="'#.###.###'" type="text" class="form-control form-control-sm">
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-12">
@@ -585,8 +585,6 @@
                                         <label for="local">Local onde deseja participar do evento</label>
                                         <select id="local" v-model="local" class="form-control form-control-sm">
                                             <option></option>
-                                            <option value="teste">teste</option>
-                                            <option value="teste 2">teste2</option>
                                             <option v-for="clube in clubes" v-bind:value="clube.clube">{{ clube.text }}</option>
                                         </select>
                                     </div>
