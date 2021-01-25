@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta property="og:title" content="Fotos Projeto Golfinho Campeche" />
+        <meta property="og:description" content="De 31 de janeiro a 21 de março." />
+        <meta property="og:url" content="https://projetogolfinho.herokuapp.com/" />
+        <meta property="og:image" content="https://projetogolfinho.herokuapp.com/imagens/campeche.jpg" />
+
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/fontawesome/fontawesome.css" rel="stylesheet">
@@ -14,236 +19,156 @@
 
     <body>
 
-       
+        <div class="container-fluid">
+            <div class="row" id="form-avaliar">
+                <div class="col-md-4 col-sm-12 offset-md-4 offset-sm-0 col-12">
+                    <div class="card" id="form-avaliar" v-if="exibeFormulario == false" style="padding: 55px;margin-bottom: 50px;margin-top: 200px">
+                        <h4>Obrigado por responder a avaliação do projeto golfinho!</h4>
+
+                        <h5>Clique no botão abaixo para acessar as fotos do projeto no clube AABB:</h5>
+
+                        <a href="https://drive.google.com/drive/folders/1F50AGwH2E01U45AUE00aDDce-0ac83Xg?usp=sharing" class="btn btn-primary mb-2">Acessar as fotos</a>
+                    </div>
+
+                    <div class="card"  v-if="exibeFormulario" style="padding: 55px;margin-bottom: 50px;">
+                        <form >
+                            <h3 style="margin-bottom: 35px">AVALIAÇÃO PROJETO GOLFINHO 2020</h3>
+
+                            <h6>* Para acessar fotos do projeto golfinho, preencha o formulário abaixo!</h6>
+                            <h6>* Após preencher as informações clique em avaliar e em seguida você terá acesso as fotos.</h6>
+                            <div class="form-group mb-8">
+                                <label >1- COMO VOCÊ AVALIA A IMPORTÂNCIA DESTE PROJETO</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest1" v-model="pergunta1" id="1" value="Extremamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Extremamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest1" v-model="pergunta1" id="2" value="Muito Importante">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Muito Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest1" v-model="pergunta1" id="3" value="Relativamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Relativamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest1" v-model="pergunta1" id="4" value="Pouco Importante" >
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        Pouco Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest1" v-model="pergunta1" id="5" value="Não é Importante" >
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        Não é Importante
+                                    </label>
+                                </div>
+                            </div>
+                            
+                             <div class="form-group mb-8">
+                                <label >2- AS INSTRUÇÕES REALIZADAS</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest2" v-model="pergunta2" id="6" value="Extremamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Extremamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest2" v-model="pergunta2" id="7" value="Muito Importante">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Muito Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest2" v-model="pergunta2" id="8" value="Relativamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Relativamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest2" v-model="pergunta2" id="9" value="Pouco Importante" >
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        Pouco Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest2" v-model="pergunta2" id="10" value="Não é Importante" >
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        Não é Importante
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >3- OS MATERIAIS DISPONIBILIZADOS</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta3" id="11" value="Extremamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Extremamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta3" id="12" value="Muito Importante">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Muito Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta3"   id="13" value="Relativamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Relativamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta3"  v-model="pergunta3"  id="14" value="Pouco Importante" >
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        Pouco Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta3"  id="15" value="Não é Importante" >
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        Não é Importante
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >VOCÊ INDICARIA O PROJETO PARA OUTRAS PESSOAS?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest4" v-model="pergunta4" id="exampleRadios1" value="Sim" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Sim
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest4" v-model="pergunta4" id="exampleRadios2" value="Não">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">ESPAÇO PARA SUGESTÕES VISANDO MELHORAR O PROJETO:</label>
+                                <textarea class="form-control" v-model="sugestao" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            
+                        </form>
+                        <button @click="avaliar" class="btn btn-primary mb-2">Avaliar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script type="text/javascript" src="js/axios.min.js"></script>
         <script src="js/vue.min.js"></script>
         <script src="js/avaliar.js"></script>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div id="inscricao">
-                    <form style="padding-top: 90px;">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <h5 style="font-size: 20px">Inscreva-se para o projeto golfinho!</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <h5 style="font-size: 13px">* No dia do evento o responsável deverá estar presente para assinar a ficha de inscrição!</h5>
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12" id="alert-sucesso">
-                                <div v-if="inscricaoSucesso" class="alert alert-success" role="alert">
-                                    Inscrição realizada com sucesso! você receberá um email de confimação de inscrição.
-                                </div>
-        
-                                <div v-if="erroInscricao" class="alert alert-danger" role="alert">
-                                    {{ msg }}
-                                </div>
-        
-                                <div v-if="erroCampos" class="alert alert-warning" role="alert">
-                                    A campos preenchidos incorretamente ou vazios!
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-md-4 col-sm-12">
-                                <div class="form-group">
-                                    <label for="nomeCompleto">Nome completo do participante (criança/adolescente)</label>
-                                    <input id="nomeCompleto" v-model="nomeCompleto" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="cpf">CPF</label>
-                                    <input id="cpf" v-model="cpf" v-mask="'###.###.###-##'" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="rg">RG</label>
-                                    <input id="rg" v-model="rg" v-mask="'###.###.###-##'" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="dataNascimento">Data Nascimento</label>
-                                    <input id="dataNascimento" v-model="dataNascimento" type="date" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="idade">Idade</label>
-                                    <input id="idade" v-model="idade" type="number" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="tamanhoRegata">Tamanho Regata</label>
-                                    <select id="tamanhoRegata" v-model="tamanhoRegata" class="form-control form-control-sm">
-                                        <option></option>
-                                        <option value="12">12</option>
-                                        <option value="14">14</option>
-                                        <option value="16">16</option>
-                                        <option value="P">P</option>
-                                        <option value="M">M</option>
-                                        <option value="G">G</option>
-                                    </select>
-                                </div>
-                            </div>
-        
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="nomeResponsavel">Nome do Responsável (Pai/Mãe/ outro)</label>
-                                    <input id="nomeResponsavel" v-model="nomeResponsavel" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-                            <div class="col-md-4 col-sm-12">
-                                <div class="form-group">
-                                    <label for="whatsapp">Número telefone com WhatsApp Responsável</label>
-                                    <input id="whatsapp" v-model="whatsapp" v-mask="'(##) #####-####'" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-        
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    <input id="email" v-model="email" type="email" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-                            <div class="col-md-5 col-sm-12">
-                                <div class="form-group">
-                                    <label for="bairro">Bairro/Comunidade</label>
-                                    <input id="bairro" v-model="bairro" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-        
-                            <div class="col-md-5 col-sm-12">
-                                <div class="form-group">
-                                    <label for="cidade">Cidade</label>
-                                    <input id="cidade" v-model="cidade" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    <label for="estado">Estado</label>
-                                    <select id="estado" v-model="estado" class="form-control form-control-sm">
-                                        <option value=""></option>
-                                        <option value="AC">AC</option>
-                                        <option value="AL">AL</option>
-                                        <option value="AP">AP</option>
-                                        <option value="AM">AM</option>
-                                        <option value="BA">BA</option>
-                                        <option value="CE">CE</option>
-                                        <option value="DF">DF</option>
-                                        <option value="ES">ES</option>
-                                        <option value="GO">GO</option>
-                                        <option value="MA">MA</option>
-                                        <option value="MT">MT</option>
-                                        <option value="MS">MS</option>
-                                        <option value="MG">MG</option>
-                                        <option value="PA">PA</option>
-                                        <option value="PB">PB</option>
-                                        <option value="PR">PR</option>
-                                        <option value="PE">PE</option>
-                                        <option value="PI">PI</option>
-                                        <option value="RJ">RJ</option>
-                                        <option value="RN">RN</option>
-                                        <option value="RS">RS</option>
-                                        <option value="RO">RO</option>
-                                        <option value="RR">RR</option>
-                                        <option value="SC">SC</option>
-                                        <option value="SP">SP</option>
-                                        <option value="SE">SE</option>
-                                        <option value="TO">TO</option>
-                                    </select>
-                                </div>
-                            </div>
-        
-                            <div class="col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="local">Local onde deseja participar do evento</label>
-                                    <select id="local" v-model="local" class="form-control form-control-sm">
-                                        <option></option>
-                                        <option value="teste">teste</option>
-                                        <option value="teste 2">teste2</option>
-                                        <option v-for="clube in clubes" v-bind:value="clube.clube">{{ clube.text }}</option>
-                                    </select>
-                                </div>
-                            </div>
-        
-                            <div class="col-md-4 col-sm-12">
-                                <div class="form-group">
-                                    <label for="deficiencia">Possui alguma necessidade de atendimento diferenciado?</label>
-                                    <select id="deficiencia" v-model="deficiencia" class="form-control form-control-sm">
-                                        <option></option>
-                                        <option value="true">Sim</option>
-                                        <option value="false">Não</option>
-                                    </select>
-                                </div>
-                            </div>
-        
-                        </div>
-        
-                        <div class="row">
-        
-        
-                            <div class="col-md-12 col-sm-12" v-if="exibeDescricaoAtendimento" >
-                                <div class="form-group">
-                                    <label for="descricaoAtendimento">Descreva o atendimento diferenciado no dia da atividade</label>
-                                    <input id="descricaoAtendimento" v-model="descricaoAtendimento" type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2 offset-md-10 col-sm-12" >
-                                <button type="button" class="btn btn-primary btn-sm" style="width: 100%;" data-toggle="modal" data-target="#modalAceite">Inscrever</button>
-                            </div>
-                        </div>
-                    </form>
-        
-                    <div class="modal fade" id="modalAceite" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">TERMO DE ACEITE</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    * Confirmo que todas as informação preenchidas na ficha de inscrição são verdadeiras;<br>
-                                    * Autorizo o uso da imagem do participante  (criança/adolescente) para fins de divulgação do projeto nas redes/ midas sociais, revistas e jornais;<br>
-                                    * Tenho ciência de que as inscrições são limitadas e que após a realização da inscrição tenho o compromisso de levar o participante até o local do evento, conforme horário informado. É importante salientar que o NÃO COMPARECIMENTO prejudicará a organização das atividades e poderá até impedir que outros interessados participem. Em caso de desistência informar com 48h de antecedência nos seguintes contatos: <br> (49) 2049-7655 ou (49) 2049-7654 no horário das 13h às 19h.<br> Ou no e-mail: 6b3aux4@cbm.sc.gov.br.
-                                    <br><br>
-                                    Li e aceito as informações descritas no termo de aceite.
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não Aceito</button>
-                                    <button type="button" class="btn btn-primary" @click="inscrever">Aceito</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
     </body>
 </html>
