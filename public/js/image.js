@@ -41,7 +41,7 @@ var app = new Vue({
         this.mesAtual = parseInt(getDataHoraAtual().split("T")[0].split("-")[1]);
         this.diaAtual = parseInt(getDataHoraAtual().split("T")[0].split("-")[2]);
 
-        if(this.mesAtual + 1 > 1 && this.diaAtual > 23){
+        if(this.mesAtual + 1 > 1 && this.diaAtual > 27){
             this.inscricoesAbertas = false;
         }
     },
