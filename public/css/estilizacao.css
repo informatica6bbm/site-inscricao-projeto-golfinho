@@ -21,7 +21,7 @@ body {
 }
 
 #datas {
-    padding-top: 85px;
+    padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -67,7 +67,7 @@ body {
 #rodape {
     width: 100%;
     height: auto;
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0, 0.6);
 }
 
 .titulos-rodape {
