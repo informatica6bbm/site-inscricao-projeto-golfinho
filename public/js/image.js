@@ -30,20 +30,20 @@ var app = new Vue({
         axios.get('https://projetogolfinho.herokuapp.com/pessoa/vagas').then(response => {
             this.clubes = response.data;
         });
-        function getDataHoraAtual() {
+        /*function getDataHoraAtual() {
             var data = new Date();
             let data2 = new Date(data.valueOf() - data.getTimezoneOffset() * 60000);
             var data = data2.toISOString().replace(/\.\d{3}Z$/, '');
 
             return data;
-        }
-        this.anoAtual = parseInt(getDataHoraAtual().split("T")[0].split("-")[0]) ;
+        }*/
+        /*this.anoAtual = parseInt(getDataHoraAtual().split("T")[0].split("-")[0]) ;
         this.mesAtual = parseInt(getDataHoraAtual().split("T")[0].split("-")[1]);
         this.diaAtual = parseInt(getDataHoraAtual().split("T")[0].split("-")[2]);
 
         if(this.mesAtual + 1 > 2 && this.diaAtual > 27){
             this.inscricoesAbertas = false;
-        }
+        }*/
     },
     watch: {
         deficiencia(val) {
