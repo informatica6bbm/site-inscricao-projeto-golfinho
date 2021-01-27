@@ -28,7 +28,7 @@ var app = new Vue({
         cidades: [],
     },
     created() {
-        axios.get('http://localhost:3000/pessoa/cidades').then(response => {
+        axios.get('https://projetogolfinho.herokuapp.com/pessoa/clubesCidade/').then(response => {
             this.cidades = response.data;
         });
 
