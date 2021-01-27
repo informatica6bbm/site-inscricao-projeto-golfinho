@@ -59,11 +59,10 @@ var app = new Vue({
             }
         },
         cidade(val){
-            if(val){
-                axios.get('https://projetogolfinho.herokuapp.com/pessoa/cidades/').then(response => {
+            axios.get('https://projetogolfinho.herokuapp.com/pessoa/cidades/').then(response => {
                 this.cidades = response.data;
-                });
-            }
+            });
+            
         }
     },
     methods: {
