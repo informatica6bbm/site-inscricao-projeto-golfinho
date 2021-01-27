@@ -17,7 +17,7 @@ exports.get = (req, res, next) => {
             var sheet = info.worksheets[0];
 
             for(var cont = 0; cont < info.worksheets.length; cont++){
-                if(info.worksheets[cont].title == "QtdInscritosClube"){
+                if(info.worksheets[cont].title == "Clubes"){
                     sheet = info.worksheets[cont];
                 }
             }
@@ -29,12 +29,12 @@ exports.get = (req, res, next) => {
             var clubeComVagas = [];
             var obj = {};
 
-            for(var i = 0; i < qtdInscritosClube.length; i++){
-                if(parseInt(qtdInscritosClube[i].qtdvagas) > parseInt(qtdInscritosClube[i].qtdinscritos)) {
-                    obj.clube = qtdInscritosClube[i].clube;
-                    obj.text =  qtdInscritosClube[i].text;
-                    obj.qtdvagas = qtdInscritosClube[i].qtdvagas;
-                    obj.qtdinscritos = qtdInscritosClube[i].qtdinscritos;
+            for(var i = 0; i < Clubes.length; i++){
+                if(parseInt(Clubes[i].qtdvagas) > parseInt(Clubes[i].qtdinscritos)) {
+                    obj.clube = Clubes[i].clube;
+                    //obj.text =  Clubes[i].text;
+                    obj.qtdvagas = Clubes[i].qtdvagas;
+                    obj.qtdinscritos = Clubes[i].qtdinscritos;
                     clubeComVagas.push(obj);
                     obj = {};
                 }
@@ -119,7 +119,7 @@ exports.post = (req, res, next) => {
             });
 
             for(var cont = 0; cont < info.worksheets.length; cont++){
-                if(info.worksheets[cont].title == "QtdInscritosClube"){
+                if(info.worksheets[cont].title == "Clubes"){
                     sheet1 = info.worksheets[cont];
                 }
             }
@@ -230,10 +230,10 @@ exports.post = (req, res, next) => {
                     }
                 });
 
-                for(var i = 0; i <  qtdInscritosClube.length; i++) {
-                    if( qtdInscritosClube[i].clube == local){
-                        qtdInscritosClube[i].qtdinscritos = parseInt(qtdInscritosClube[i].qtdinscritos) + 1;
-                        qtdInscritosClube[i].save();
+                for(var i = 0; i <  Clubes.length; i++) {
+                    if( Clubes[i].clube == local){
+                        Clubes[i].qtdinscritos = parseInt(Clubes[i].qtdinscritos) + 1;
+                        Clubes[i].save();
                         break;
                     }
                 }
