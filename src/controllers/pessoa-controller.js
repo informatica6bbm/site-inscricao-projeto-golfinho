@@ -17,7 +17,7 @@ exports.get = (req, res, next) => {
             var sheet = info.worksheets[0];
 
             for(var cont = 0; cont < info.worksheets.length; cont++){
-                if(info.worksheets[cont].title == "QtdInscritosClube"){
+                if(info.worksheets[cont].title == "Clubes"){
                     sheet = info.worksheets[cont];
                 }
             }
@@ -29,12 +29,12 @@ exports.get = (req, res, next) => {
             var clubeComVagas = [];
             var obj = {};
 
-            for(var i = 0; i < qtdInscritosClube.length; i++){
-                if(parseInt(qtdInscritosClube[i].qtdvagas) > parseInt(qtdInscritosClube[i].qtdinscritos)) {
-                    obj.clube = qtdInscritosClube[i].clube;
-                    obj.text =  qtdInscritosClube[i].text;
-                    obj.qtdvagas = qtdInscritosClube[i].qtdvagas;
-                    obj.qtdinscritos = qtdInscritosClube[i].qtdinscritos;
+            for(var i = 0; i < Clubes.length; i++){
+                if(parseInt(Clubes[i].qtdvagas) > parseInt(Clubes[i].qtdinscritos)) {
+                    obj.clube = Clubes[i].clube;
+                    //obj.text =  Clubes[i].text;
+                    obj.qtdvagas = Clubes[i].qtdvagas;
+                    obj.qtdinscritos = Clubes[i].qtdinscritos;
                     clubeComVagas.push(obj);
                     obj = {};
                 }
@@ -52,7 +52,7 @@ exports.avaliar = (req, res, next) => {
     var pergunta3 = req.body.pergunta3;
     var pergunta4 = req.body.pergunta4;
     var sugestao = req.body.sugestao;
-    
+
     async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao) {
         const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
         await promisify(doc.useServiceAccountAuth)(creds);
@@ -80,6 +80,85 @@ exports.avaliar = (req, res, next) => {
     }
 
     accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao);
+}
+
+exports.getCidades = (req, res, next) => {
+    async function accessSpreadsheet() {
+            const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
+            await promisify(doc.useServiceAccountAuth)(creds);
+
+            const info = await promisify(doc.getInfo)();
+            var sheet = info.worksheets[0];
+
+            for(var cont = 0; cont < info.worksheets.length; cont++){
+                if(info.worksheets[cont].title == "Cidade"){
+                    sheet = info.worksheets[cont];
+                }
+            }
+
+            const getCidades = await promisify(sheet.getRows)({
+                offset: 1
+            });
+            // [
+            //     {
+            //         id: 1,
+            //         cidade: 'Chapecó'
+            //     }
+            // ]
+            var objAux = {};
+            var cidades  = [];
+
+            for(var counter = 0; counter < getCidades.length; counter++){
+                objAux.idcidade = getCidades[counter].idcidade;
+                objAux.cidade = getCidades[counter].cidade;
+                cidades.push(objAux);
+                objAux = {};
+            }
+
+            res.status(200).json(cidades);
+    }
+
+    accessSpreadsheet();
+}
+
+exports.getClubesCidade = (req, res, next) => {
+    var idCidade = req.params.id;
+    console.log(req.params.id);
+    async function accessSpreadsheet() {
+            const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
+            await promisify(doc.useServiceAccountAuth)(creds);
+
+            const info = await promisify(doc.getInfo)();
+            var sheet = info.worksheets[0];
+
+            for(var cont = 0; cont < info.worksheets.length; cont++){
+                if(info.worksheets[cont].title == "Clubes"){
+                    sheet = info.worksheets[cont];
+                }
+            }
+
+            const clubes= await promisify(sheet.getRows)({
+                offset: 1
+            });
+            var clubesCidade = [];
+            var aux = {};
+
+            for(var counter = 0; counter < clubes.length; counter++){
+                if(clubes[counter].idcidade == idCidade){
+                    if(parseInt(clubes[counter].qtdvagas) >= parseInt(clubes[counter].qtdinscritos)){
+                        aux.idcidade = clubes[counter].idcidade;
+                        aux.qtdvagas = clubes[counter].qtdvagas;
+                        aux.qtdinscritos = clubes[counter].qtdinscritos;
+                        aux.clube = clubes[counter].clube;
+                        clubesCidade.push(aux);
+                        aux = {};
+                    }
+                }
+            }
+            res.status(200).json(clubesCidade);
+    }
+
+    accessSpreadsheet();
 }
 
 exports.post = (req, res, next) => {
@@ -119,7 +198,7 @@ exports.post = (req, res, next) => {
             });
 
             for(var cont = 0; cont < info.worksheets.length; cont++){
-                if(info.worksheets[cont].title == "QtdInscritosClube"){
+                if(info.worksheets[cont].title == "Clubes"){
                     sheet1 = info.worksheets[cont];
                 }
             }
@@ -230,10 +309,10 @@ exports.post = (req, res, next) => {
                     }
                 });
 
-                for(var i = 0; i <  qtdInscritosClube.length; i++) {
-                    if( qtdInscritosClube[i].clube == local){
-                        qtdInscritosClube[i].qtdinscritos = parseInt(qtdInscritosClube[i].qtdinscritos) + 1;
-                        qtdInscritosClube[i].save();
+                for(var i = 0; i <  Clubes.length; i++) {
+                    if( Clubes[i].clube == local){
+                        Clubes[i].qtdinscritos = parseInt(Clubes[i].qtdinscritos) + 1;
+                        Clubes[i].save();
                         break;
                     }
                 }
