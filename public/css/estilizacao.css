@@ -30,12 +30,15 @@ body {
     padding: 3px;
     vertical-align: middle;
     display: table-cell;
+    
 }
 .table tbody tr td {
     padding: 0px;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: bolder;
     text-align: center;
     vertical-align: middle;
+    border-color: #a0a1a3;
 }
 
 #informacoesNutricionais {

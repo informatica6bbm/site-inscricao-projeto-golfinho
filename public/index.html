@@ -298,111 +298,112 @@
                         <table class="table table-bordered table-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">Local - CHAPECÓ</th>
-                                    <th scope="col">Data</th>
-                                    <th scope="col">Horário</th>
+                                    <th scope="col" ><b>Local - CHAPECÓ</b> </th>
+                                    <th scope="col"><b>Data</b></th>
+                                    <th scope="col"><b>Horário</b></th>
                                 </tr>
                             </thead>
                             <tbody>
 
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td rowspan="2" >Clube AABB</td>
                                     <td>02/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td>03/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td rowspan="2">Clube CAMPECHE</td>
                                     <td>05/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td>06/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
 
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td rowspan="2">Clube CRC - CAMPESTRE</td>
                                     <td>09/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td>10/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td rowspan="2">Clube INDUSTRIAL</td>
                                     <td>09/02/2021</td>
                                     <td>14H - 18H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td>10/02/2021</td>
                                     <td>14H - 18H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td rowspan="2">CAMPESTRE Piscina Clube</td>
                                     <td>11/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td>12/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td rowspan="2">CAÇA E PESCA</td>
                                     <td>11/02/2021</td>
                                     <td>14H - 18H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
+                                   
                                     <td>12/02/2021</td>
                                     <td>14H - 18H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td>Clube Cachenerê</td>
                                     <td>13/02/2021</td>
                                     <td>08H - 17H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td>Camping SÍTIO POUSADA</td>
                                     <td>13/02/2021</td>
                                     <td>08H - 17H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td rowspan="2">CRC-Centro</td>
                                     <td>15/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td>16/02/2021</td>
                                     <td>08H - 12H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td >Estância das águas</td>
                                     <td>20/02/2021</td>
                                     <td>08H - 17H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td >Camping Tropeiro Velho</td>
                                     <td>20/02/2021</td>
                                     <td>08H - 17H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#ffff66>
                                     <td >COUNTRY CLUBE</td>
                                     <td>27/02/2021</td>
                                     <td>08H - 17H</td>
                                 </tr>
-                                <tr>
+                                <tr bgcolor=#87CEEB>
                                     <td >GOIO-EN</td>
                                     <td>06/03/2021</td>
                                     <td>14H - 17H</td>
                                 </tr>
                                 <tr>
-                                    <td style="font-size: 20px;"><b>LOCAL</b></td>
-                                    <td style="font-size: 20px;"><b>DATA</b></td>
-                                    <td style="font-size: 20px;"><b>HORÁRIO</b></td>
+                                    <td style="font-size: 18px;"><b>LOCAL</b></td>
+                                    <td style="font-size: 18px;"><b>DATA</b></td>
+                                    <td style="font-size: 18px;"><b>HORÁRIO</b></td>
                                 </tr>
                                 <tr>
                                     <td>Arvoredo</td>
@@ -608,7 +609,10 @@
                                     <div class="form-group">
                                         <label for="cidade">Cidade</label>
                                         <select id="cidade" v-model="cidade" class="form-control form-control-sm">
-                                            <option value=""></option>
+                                            <option></option>
+                                            <option v-for="cd in cidades" v-bind:value="cd.idcidade">{{ cd.cidade }}</option>
+
+                                            <!-- <option value=""></option>
                                             <option value="Arabutã">Arabutã</option>
                                             <option value="Arvoredo">Arvoredo</option>
                                             <option value="Chapecó">Chapecó</option>
@@ -617,8 +621,8 @@
                                             <option value="Itá">Itá</option>
                                             <option value="Paial">Paial</option>
                                             <option value="Seara">Seara</option>
-                                            <option value="Xavantina">Xavantina</option>  
-                                        </select> 
+                                            <option value="Xavantina">Xavantina</option> -->
+                                        </select>
                                     </div>
                                 </div>
                             </div>

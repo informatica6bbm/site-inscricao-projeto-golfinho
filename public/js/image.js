@@ -25,11 +25,13 @@ var app = new Vue({
         exibeDescricaoAtendimento: false,
         clubes: [],
         msg: "",
+        cidades: [],
     },
     created() {
-        axios.get('https://projetogolfinho.herokuapp.com/pessoa/vagas').then(response => {
-            this.clubes = response.data;
+        axios.get('http://localhost:3000/pessoa/cidades').then(response => {
+            this.cidades = response.data;
         });
+
         /*function getDataHoraAtual() {
             var data = new Date();
             let data2 = new Date(data.valueOf() - data.getTimezoneOffset() * 60000);
@@ -56,6 +58,11 @@ var app = new Vue({
                 this.exibeDescricaoAtendimento = false;
             }
         },
+        cidade(val){
+            axios.get('http://localhost:3000/pessoa/clubesCidade/' + val).then(response => {
+                this.clubes = response.data;
+            });
+        }
     },
     methods: {
         validaCampos() {
@@ -133,6 +140,13 @@ var app = new Vue({
                 descricaoAtendimento: this.descricaoAtendimento,
             };
             if(this.validaCampos()) {
+
+                for(var cont = 0; cont < this.cidades.length; cont++){
+                    if(this.cidades[cont].idcidade == data.cidade){
+                        data.cidade = this.cidades[cont].cidade;
+                    }
+                }
+
                 axios.post('https://projetogolfinho.herokuapp.com/pessoa', data).then(response => {
                     if(response.data.res) {
                         $('#modalAceite').modal('hide');
