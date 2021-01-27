@@ -6,9 +6,9 @@ const controller = require('./../controllers/pessoa-controller');
 
 router.get('/vagas', controller.get);
 
-router.get('/cidades', controller.getCidades);
+router.get('/cidades', controller.get);
 
-router.get('/clubesCidade/:id', controller.getClubesCidade);
+router.get('/clubesCidade/:id', controller.get);
 
 router.post('/avaliar', controller.avaliar);
 
