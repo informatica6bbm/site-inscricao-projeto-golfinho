@@ -59,9 +59,11 @@ var app = new Vue({
             }
         },
         cidade(val){
+            if(val){
             axios.get('http://localhost:3000/pessoa/clubesCidade/' + val).then(response => {
                 this.clubes = response.data;
             });
+            }
         }
     },
     methods: {
