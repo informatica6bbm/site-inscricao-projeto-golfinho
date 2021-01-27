@@ -8,7 +8,7 @@ router.get('/vagas', controller.get);
 
 router.post('/avaliar', controller.avaliar);
 
-router.get('/cidades', controller.getCidades);
+//router.get('/cidades', controller.getCidades);
 
 //router.get('/clubesCidade/:id', controller.getClubesCidade);
 
