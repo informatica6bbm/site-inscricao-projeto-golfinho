@@ -28,7 +28,7 @@ var app = new Vue({
         cidades: [],
     },
     created() {
-        axios.get('https://projetogolfinho.herokuapp.com/pessoa/clubesCidade/').then(response => {
+        axios.get('https://projetogolfinho.herokuapp.com/pessoa/cidades/').then(response => {
             this.cidades = response.data;
         });
 
@@ -59,10 +59,11 @@ var app = new Vue({
             }
         },
         cidade(val){
-            axios.get('https://projetogolfinho.herokuapp.com/pessoa/cidades/').then(response => {
-                this.cidades = response.data;
-            });
-            
+            if(val){
+                axios.get("https://projetogolfinho.herokuapp.com/pessoa/clubesCidade/" + val).then(response => {
+                    this.clubes = response.data;
+                });
+            }
         }
     },
     methods: {
