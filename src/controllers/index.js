@@ -49,4 +49,16 @@ exports.country = (req, res, next) => {
 exports.goioen = (req, res, next) => {
     res.sendFile(path.resolve('public/goioen.html'));
 }
+exports.arvoredo = (req, res, next) => {
+    res.sendFile(path.resolve('public/arvoredo.html'));
+}
+exports.xavantina = (req, res, next) => {
+    res.sendFile(path.resolve('public/xavantina.html'));
+}
+exports.arabuta = (req, res, next) => {
+    res.sendFile(path.resolve('public/arabuta.html'));
+}
+exports.ipumirim = (req, res, next) => {
+    res.sendFile(path.resolve('public/ipumirim.html'));
+}
 
