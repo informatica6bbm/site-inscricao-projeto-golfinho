@@ -12,5 +12,7 @@ router.get('/crc', controller.crc);
 router.get('/industrial', controller.industrial);
 router.get('/caramuru', controller.caramuru);
 router.get('/campestre', controller.campestre);
+router.get('/cachenere', controller.cachenere);
+router.get('/campestre', controller.campestre);
 
 module.exports = router;
