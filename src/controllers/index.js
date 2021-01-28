@@ -31,22 +31,22 @@ exports.caramuru = (req, res, next) => {
 exports.campestre = (req, res, next) => {
     res.sendFile(path.resolve('public/campestre.html'));
 }
-exports.campestre = (req, res, next) => {
+exports.cachenere = (req, res, next) => {
     res.sendFile(path.resolve('public/cachenere.html'));
 }
-exports.campestre = (req, res, next) => {
+exports.sitio = (req, res, next) => {
     res.sendFile(path.resolve('public/sitio.html'));
 }
-exports.campestre = (req, res, next) => {
+exports.estancia = (req, res, next) => {
     res.sendFile(path.resolve('public/estancia.html'));
 }
-exports.campestre = (req, res, next) => {
+exports.tropeiro = (req, res, next) => {
     res.sendFile(path.resolve('public/tropeiro.html'));
 }
-exports.campestre = (req, res, next) => {
+exports.country = (req, res, next) => {
     res.sendFile(path.resolve('public/country.html'));
 }
-exports.campestre = (req, res, next) => {
+exports.goioen = (req, res, next) => {
     res.sendFile(path.resolve('public/goioen.html'));
 }
 
