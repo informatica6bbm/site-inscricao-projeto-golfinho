@@ -60,7 +60,7 @@ var app = new Vue({
         },
         cidade(val){
             
-                axios.get("https://projetogolfinho.herokuapp.com/pessoa/ClubesCidade/" + val).then(response => {
+                axios.get("https://projetogolfinho.herokuapp.com/pessoa/Clubescidade/" + val).then(response => {
                     this.clubes = response.data;
                 });
             
