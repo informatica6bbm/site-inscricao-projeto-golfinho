@@ -266,35 +266,7 @@ exports.post = (req, res, next) => {
                     tls: { rejectUnauthorized: false }
                 });
                 var def = deficiencia === 'true' ? 'SIM' : 'NÃO';
-                var html = '<style>\
-                    h5 {\
-                        font-family: Gill Sans, sans-serif;\
-                    }\
-                    ul li {\
-                        list-style-type: none;\
-                        font-family: Gill Sans, sans-serif;\
-                        font-size: 14px;\
-                    }\
-                </style>\
-                <h5 style="font-size: 20px">Confirmação inscrição Projeto Golfinho</h5>\
-                <h5 style="font-size: 13px">* No dia do evento o resposável deverá estar presente para assinar a ficha de inscrição!</h5>\
-                <ul style="list-style-type:circle;">\
-                  <li><strong>Nome completo: </strong> ' + nomeCompleto + '</li>\
-                  <li><strong>CPF: </strong>' + cpf + '</li>\
-                  <li><strong>RG: </strong>' + rg + '</li>\
-                  <li><strong>Data Nascimento: </strong>' + dataNascimento + '</li>\
-                  <li><strong>Idade: </strong>' + idade + '</li>\
-                  <li><strong>Tamanho Regata: </strong>' + tamanhoRegata + '</li>\
-                  <li><strong>Nome do Responsável (Pai/Mãe/ outro): </strong>' + nomeResponsavel + '</li>\
-                  <li><strong>Número telefone com WhatsApp Responsável: </strong>' + whatsapp + '</li>\
-                  <li><strong>E-mail: </strong>' + email + '</li>\
-                  <li><strong>Bairro/Comunidade: </strong>' + bairro + '</li>\
-                  <li><strong>Cidade: </strong>' + cidade + '</li>\
-                  <li><strong>Estado: </strong>' + estado + '</li>\
-                  <li><strong>Local onde deseja participar do evento: </strong>' + local + '</li>\
-                  <li><strong>Possui alguma deficiência?: </strong>' + def + '</li>';
-            html = def ? html + '<li><strong>Descreva o atendimento diferenciado no dia da atividade: </strong>' + descricaoAtendimento + '</li>' : html + '';
-            html = html + '</ul>';
+                
 
                 const mailOptions = {
                     from: 'projetogolfinho6bbm@gmail.com',
