@@ -147,9 +147,10 @@ exports.getClubesCidade = (req, res, next) => {
                 if(clubes[counter].idcidade == idCidade){
                     if(parseInt(clubes[counter].qtdvagas) >= parseInt(clubes[counter].qtdinscritos)){
                         aux.idcidade = clubes[counter].idcidade;
+                        aux.clube = clubes[counter].clube;
                         aux.qtdvagas = clubes[counter].qtdvagas;
                         aux.qtdinscritos = clubes[counter].qtdinscritos;
-                        aux.clube = clubes[counter].clube;
+                        
                         clubesCidade.push(aux);
                         aux = {};
                     }
