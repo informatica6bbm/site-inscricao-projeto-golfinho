@@ -13,6 +13,14 @@ router.get('/industrial', controller.industrial);
 router.get('/caramuru', controller.caramuru);
 router.get('/campestre', controller.campestre);
 router.get('/cachenere', controller.cachenere);
-router.get('/campestre', controller.campestre);
+router.get('/sitio', controller.sitio);
+router.get('/estancia', controller.estancia);
+router.get('/tropeiro', controller.tropeiro);
+router.get('/country', controller.country);
+router.get('/goioen', controller.goioen);
+router.get('/arvoredo', controller.arvoredo);
+router.get('/xavantina', controller.xavantina);
+router.get('/arabuta', controller.arabuta);
+router.get('/ipumirim', controller.ipumirim);
 
 module.exports = router;
