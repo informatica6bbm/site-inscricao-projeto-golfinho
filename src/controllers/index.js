@@ -61,4 +61,15 @@ exports.arabuta = (req, res, next) => {
 exports.ipumirim = (req, res, next) => {
     res.sendFile(path.resolve('public/ipumirim.html'));
 }
-
+exports.seara = (req, res, next) => {
+    res.sendFile(path.resolve('public/seara.html'));
+}
+exports.paial = (req, res, next) => {
+    res.sendFile(path.resolve('public/paial.html'));
+}
+exports.ita = (req, res, next) => {
+    res.sendFile(path.resolve('public/ita.html'));
+}
+exports.concordia = (req, res, next) => {
+    res.sendFile(path.resolve('public/concordia.html'));
+}

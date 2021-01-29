@@ -22,5 +22,9 @@ router.get('/arvoredo', controller.arvoredo);
 router.get('/xavantina', controller.xavantina);
 router.get('/arabuta', controller.arabuta);
 router.get('/ipumirim', controller.ipumirim);
+router.get('/seara', controller.seara);
+router.get('paial', controller.paial);
+router.get('/ita', controller.ita);
+router.get('/concordia', controller.concordia);
 
 module.exports = router;
