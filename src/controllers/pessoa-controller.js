@@ -51,9 +51,14 @@ exports.avaliar = (req, res, next) => {
     var pergunta2 = req.body.pergunta2;
     var pergunta3 = req.body.pergunta3;
     var pergunta4 = req.body.pergunta4;
+    var pergunta5 = req.body.pergunta5;
+    var pergunta6 = req.body.pergunta6;
+    var pergunta7 = req.body.pergunta7;
+    var pergunta8 = req.body.pergunta8;
+    var pergunta9 = req.body.pergunta9;
     var sugestao = req.body.sugestao;
 
-    async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao) {
+    async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, sugestao) {
         const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
         await promisify(doc.useServiceAccountAuth)(creds);
         const info = await promisify(doc.getInfo)();
@@ -71,6 +76,11 @@ exports.avaliar = (req, res, next) => {
             pergunta2: pergunta2,
             pergunta3: pergunta3,
             pergunta4: pergunta4,
+            pergunta5: pergunta5,
+            pergunta6: pergunta6,
+            pergunta7: pergunta7,
+            pergunta8: pergunta8,
+            pergunta9: pergunta9,
             sugestao: sugestao
         }
 
@@ -79,7 +89,7 @@ exports.avaliar = (req, res, next) => {
         res.status(200).json(true);
     }
 
-    accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, sugestao);
+    accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, sugestao);
 }
 
 exports.getCidades = (req, res, next) => {
