@@ -32,7 +32,12 @@
 
                     <div class="card"  v-if="exibeFormulario" style="padding: 55px;margin-bottom: 50px;">
                         <form >
-                            <h3 style="margin-bottom: 35px">AVALIAÇÃO PROJETO GOLFINHO 2020</h3>
+                            <h3 style="margin-bottom: 35px">AVALIAÇÃO PROJETO GOLFINHO 2021</h3>
+                            
+                            <h6>* Com o objetivo de avaliarmos a execução do Projeto Golfinho  solicitamos que os pais/responsáveis<br>
+                                respondam às seguintes questões para que dessa forma  seja possível aprimorar <br>
+                                 nossas atividades nas próximas edições. </h6>
+
 
                             <h6>* Para acessar fotos do projeto golfinho, preencha o formulário abaixo!</h6>
                             <h6>* Após preencher as informações clique em avaliar e em seguida você terá acesso as fotos.</h6>
@@ -139,6 +144,155 @@
                             </div>
 
                             <div class="form-group mb-8">
+                                <label >4- A DIDÁTICA UTILIZADA PELOS INSTRUTORES DURANTE AS ATIVIDADES DO PROJETO</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta4" id="11" value="Extremamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Extremamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta4" id="12" value="Muito Importante">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Muito Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta4"   id="13" value="Relativamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Relativamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta4" id="14" value="Pouco Importante" >
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        Pouco Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta4"  id="15" value="Não é Importante" >
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        Não é Importante
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >5- OS LOCAIS DE REALIZAÇÃO</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta5" id="11" value="Extremamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Extremamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta5" id="12" value="Muito Importante">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Muito Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta5"   id="13" value="Relativamente Importante" >
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Relativamente Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta5"  v-model="pergunta3"  id="14" value="Pouco Importante" >
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        Pouco Importante
+                                    </label>
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta5"  id="15" value="Não é Importante" >
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        Não é Importante
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >6- A CARGA HORÁRIA DO PROJETO E A FORMA DE EXECUÇÃO DAS ATIVIDADES SÃO ADEQUADAS</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta6" id="11" value="sim" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        SIM
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta6" id="12" value="nao">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        NÃO
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">PODERIA SER DIFERENTE, DESCREVA COMO:</label>
+                                    <textarea class="form-control" v-model="pergunta6" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >7- PÚBLICO ALVO DO PROJETO É ADEQUADO?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta7" id="11" value="sim" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        SIM
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta7" id="12" value="nao">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        NÃO
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">PODERIA SER DIFERENTE, DESCREVA COMO:</label>
+                                    <textarea class="form-control" v-model="pergunta7" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >8- A ALIMENTAÇÃO OFERECIDADE É ADEQUADA:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta8" id="11" value="sim" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        SIM
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta8" id="12" value="nao">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        NÃO
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">PODERIA SER DIFERENTE, DESCREVA COMO:</label>
+                                    <textarea class="form-control" v-model="pergunta8" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label >9- VOCÊ ACHA QUE A O PROJETO CONSEGUE ATENDER OS SEUS OBJETIVOS DE“CONSCIENTIZAR CRIANÇAS E ADOLESCENTES SOBRE PREVENÇÃO, SALVAMENTO AQUÁTICO, EDUCAÇÃO AMBIENTAL E PRÁTICAS DE CIDADANIA EM REGIÕES COM PISCINAS, CAMPINGS E RIOS DE CHAPECÓ”
+                                </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta9" id="11" value="sim" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        SIM
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="quest3" v-model="pergunta9" id="12" value="nao">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        NÃO
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Outra resposta:</label>
+                                    <textarea class="form-control" v-model="pergunta9" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <!--<div class="form-group mb-8">
                                 <label >VOCÊ INDICARIA O PROJETO PARA OUTRAS PESSOAS?</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="quest4" v-model="pergunta4" id="exampleRadios1" value="Sim" >
@@ -152,7 +306,7 @@
                                         Não
                                     </label>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">ESPAÇO PARA SUGESTÕES VISANDO MELHORAR O PROJETO:</label>
