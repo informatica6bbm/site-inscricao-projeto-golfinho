@@ -296,16 +296,16 @@
                         <h3>Locais e datas do projeto</h3>
 
                         <table class="table table-bordered table-sm">
-                            <thead>
+                            <!--<thead>
                                 <tr>
                                     <th scope="col" ><b>Local - CHAPECÓ</b> </th>
                                     <th scope="col"><b>Data</b></th>
                                     <th scope="col"><b>Horário</b></th>
                                 </tr>
-                            </thead>
+                            </thead>-->
                             <tbody>
 
-                                <tr bgcolor=#87CEEB>
+                                <!--<tr bgcolor=#87CEEB>
                                     <td rowspan="2" >Clube AABB</td>
                                     <td>02/02/2021</td>
                                     <td>08H - 12H</td>
@@ -399,7 +399,7 @@
                                     <td >GOIO-EN</td>
                                     <td>06/03/2021</td>
                                     <td>14H - 17H</td>
-                                </tr>
+                                </tr>-->
                                 <tr bgcolor=#ff1a1a>
                                     <td style="font-size: 18px;"><b>LOCAL</b></td>
                                     <td style="font-size: 18px;"><b>DATA</b></td>
@@ -666,7 +666,7 @@
                                         </select>
                                     </div>
                                 </div>
-
+                                
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="local">Local onde deseja participar do evento</label>
@@ -676,6 +676,7 @@
                                         </select>
                                     </div>
                                 </div>
+                                
 
                                 <div class="col-md-4 col-sm-12">
                                     <div class="form-group">
@@ -689,9 +690,17 @@
                                 </div>
 
                             </div>
+                            
 
                             <div class="row">
-
+                                <div class="modal-body" >
+                                    * <b>INFORMAÇÕES IMPORTANTES:</b><br>
+                                    * <b>NA REALIZAÇÃO DESSE EVENTO SEGUIREMOS TODAS AS MEDIDAS</b><br>
+                                    * <b>E PROTOCOLOS DE SEGURANÇA VIGENTES.</b><br>
+                                    * <b>O USO OBRIGATÓRIO DE MÁSCARAS PARA PARTICIPANTES E RESPONSÁVEIS;</b><br>
+                                    * <b>HIGIENIZAÇÃO DAS MÃOS;</b><br>
+                                    * <b>E DISTANCIAMENTO SOCIAL.</b><br>
+                                </div>
 
                                 <div class="col-md-12 col-sm-12" v-if="exibeDescricaoAtendimento" >
                                     <div class="form-group">
@@ -700,13 +709,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-body" >
-                                * <b>INFORMAÇÕES IMPORTANTES:</b><br>
-                                * <b>NA REALIZAÇÃO DESSE EVENTO SEGUIREMOS TODAS AS MEDIDAS E PROTOCOLOS DE SEGURANÇA VIGENTES.</b><br>
-                                * <b>O USO OBRIGATÓRIO DE MÁSCARAS PARA PARTICIPANTES E RESPONSÁVEIS;</b><br>
-                                * <b>HIGIENIZAÇÃO DAS MÃOS;</b><br>
-                                * <b>E DISTANCIAMENTO SOCIAL.</b><br>
-                            </div>
+                            
                             <div class="row">
                                 <div class="col-md-2 offset-md-10 col-sm-12" >
                                     <button type="button" class="btn btn-primary btn-sm" style="width: 100%;" data-toggle="modal" data-target="#modalAceite">Inscrever</button>
@@ -746,7 +749,7 @@
 
         </div>
 
-        <div class="container-fluid" id="fotos1">
+        <div class="container-fluid" id="fotos1" style="margin-bottom: 30px; margin-top: 100px;">
                 <div class="row">
                     <div class="col-md-12" style="margin-bottom: 30px; margin-top: 20px;">
                         <h3 style="font-size: 20px">Fotos</h3>
