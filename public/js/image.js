@@ -154,7 +154,7 @@ var app = new Vue({
                         $('#modalAceite').modal('hide');
                         this.inscricaoSucesso = true;
                         this.erroInscricao = false;
-                        alert("Inscrição realizada com sucesso! você receberá um email de confimação de inscrição.");
+                        alert("Inscrição realizada com sucesso!");
                         window.location.href = "#alert-sucesso";
                     }
 
