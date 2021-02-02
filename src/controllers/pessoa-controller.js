@@ -217,34 +217,34 @@ exports.post = (req, res, next) => {
                 offset: 1
             });
 
-            function verificaCpfRg(cpf, rg){
+            //function verificaCpfRg(cpf, rg){
 
-                for(var i = 0; i < rows.length; i++) {
-                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
-                        if(rows[i].cpf == cpf || rows[i].rg == rg){
-                            return false;
-                        }
-                    }
+             //   for(var i = 0; i < rows.length; i++) {
+              //      if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
+              //          if(rows[i].cpf == cpf || rows[i].rg == rg){
+                //            return false;
+                  //      }
+                    //}
 
-                    if(cpf.localeCompare("") == 0 && rg.localeCompare("") != 0){
-                        if(rows[i].rg == rg){
-                            return false;
-                        }
-                    }
+//                    if(cpf.localeCompare("") == 0 && rg.localeCompare("") != 0){
+  //                      if(rows[i].rg == rg){
+    //                        return false;
+      //                  }
+        //            }
 
-                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") == 0){
-                        if(rows[i].cpf == cpf){
-                            return false;
-                        }
-                    }
-                }
+//                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") == 0){
+  //                      if(rows[i].cpf == cpf){
+    //                        return false;
+      //                  }
+        //            }
+          //      }
 
-                return true;
-            }
+//                return true;
+  //          }
 
 
-             if(verificaCpfRg(cpf, rg)) {
-            //if(true){
+             //if(verificaCpfRg(cpf, rg)) {
+            if(true){
                 const row = {
                     nomeCompleto: nomeCompleto,
                     cpf: cpf,
