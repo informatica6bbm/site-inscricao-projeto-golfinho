@@ -332,10 +332,10 @@ exports.post = (req, res, next) => {
                 res.status(200).json({msg: 'Inscrição realizada com sucesso!', res: true});
             }
 
-            // if(!verificaCpfRg(cpf, rg)){
-            //     msg = 'CPF ou RG já inscritos!';
-            //     resposta = false;
-            // }
+             if(!verificaCpfRg(cpf, rg)){
+                 msg = 'CPF ou RG já inscritos!';
+                 resposta = false;
+             }
 
             res.status(200).json({
                 msg: msg,
