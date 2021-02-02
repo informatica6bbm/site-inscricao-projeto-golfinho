@@ -242,8 +242,8 @@ exports.post = (req, res, next) => {
                  return true;
              }
 
-            // if(verificaCpfRg(cpf, rg)) {
-            if(true){
+             if(verificaCpfRg(cpf, rg)) {
+            //if(true){
                 const row = {
                     nomeCompleto: nomeCompleto,
                     cpf: cpf,
