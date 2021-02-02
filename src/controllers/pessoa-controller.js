@@ -219,27 +219,25 @@ exports.post = (req, res, next) => {
 
              function verificaCpfRg(cpf, rg){
             
-                function verificaCpfRg(cpf, rg){
-
-                    for(var i = 0; i < rows.length; i++) {
-                        if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
-                            if(rows[i].cpf == cpf || rows[i].rg == rg){
-                                return false;
-                            }
-                        }
-    
-                        if(cpf.localeCompare("") == 0 && rg.localeCompare("") != 0){
-                            if(rows[i].rg == rg){
-                                return false;
-                            }
-                        }
-    
-                        if(cpf.localeCompare("") != 0 && rg.localeCompare("") == 0){
-                            if(rows[i].cpf == cpf){
-                                return false;
-                            }
-                        }
+                 for(var i = 0; i < rows.length; i++) {
+                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
+                        if(rows[i].cpf == cpf || rows[i].rg.localeCompare( rg)){
+                            return false;
+                         }
+                     }
+            
+                   if(cpf.localeCompare("") == 0 && rg.localeCompare("") != 0){
+                         if(rows[i].cpf.localeCompare( cpf) || rows[i].rg.localeCompare( rg)){
+                             return false;
+                         }
                     }
+            
+                     if(cpf.localeCompare("") != 0 && rg.localeCompare("") == 0){
+                         if(rows[i].cpf.localeCompare( cpf) || rows[i].rg.localeCompare( rg)){
+                             return false;
+                         }
+                     }
+                 }
             
                  return true;
              }
