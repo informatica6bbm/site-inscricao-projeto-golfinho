@@ -122,7 +122,7 @@ var app = new Vue({
             this.inscricaoSucesso = false;
             this.erroCampos = true;
             return false;
-        },
+        };
         inscrever() {
             var data = {
                 nomeCompleto: this.nomeCompleto,
@@ -189,7 +189,7 @@ var app = new Vue({
             if(!this.validaCampos()) {
                 $('#modalAceite').modal('hide');
             }
-        },
+        };
     }
     }
 });
