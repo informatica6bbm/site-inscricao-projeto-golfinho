@@ -207,44 +207,36 @@ exports.post = (req, res, next) => {
                 offset: 1
             });
 
-            // for(var cont = 0; cont < info.worksheets.length; cont++){
-            //     if(info.worksheets[cont].title == "Clubes"){
-            //         sheet1 = info.worksheets[cont];
-            //     }
-            // }
-
             const qtdInscritosClube = await promisify(sheet1.getRows)({
                 offset: 1
             });
 
-            //function verificaCpfRg(cpf, rg){
+            function verificaCpfRg(cpf, rg){
+               for(var i = 0; i < rows.length; i++) {
+                   if(cpf.toString().localeCompare("") != 0 && rg.toString().localeCompare("") != 0){
+                       if(rows[i].cpf == cpf.toString() || rows[i].rg == rg.toString()){
+                           return false;
+                       }
+                    }
 
-             //   for(var i = 0; i < rows.length; i++) {
-              //      if(cpf.localeCompare("") != 0 && rg.localeCompare("") != 0){
-              //          if(rows[i].cpf == cpf || rows[i].rg == rg){
-                //            return false;
-                  //      }
-                    //}
+                   if(cpf.toString().localeCompare("") == 0 && rg.toString().localeCompare("") != 0){
+                       if(rows[i].rg.toString() == rg.toString()){
+                           return false;
+                       }
+                   }
 
-//                    if(cpf.localeCompare("") == 0 && rg.localeCompare("") != 0){
-  //                      if(rows[i].rg == rg){
-    //                        return false;
-      //                  }
-        //            }
+                   if(cpf.toString().localeCompare("") != 0 && rg.toString().localeCompare("") == 0){
+                       if(rows[i].cpf == cpf.toString()){
+                           return false;
+                       }
+                   }
+               }
 
-//                    if(cpf.localeCompare("") != 0 && rg.localeCompare("") == 0){
-  //                      if(rows[i].cpf == cpf){
-    //                        return false;
-      //                  }
-        //            }
-          //      }
-
-//                return true;
-  //          }
+               return true;
+           }
 
 
-             //if(verificaCpfRg(cpf, rg)) {
-            if(true){
+             if(verificaCpfRg(cpf, rg)) {
                 const row = {
                     nomeCompleto: nomeCompleto,
                     cpf: cpf,
@@ -320,14 +312,6 @@ exports.post = (req, res, next) => {
                         console.log('Email enviado: ' + info.response);
                     }
                 });
-
-                // for(var i = 0; i <  Clubes.length; i++) {
-                //     if( Clubes[i].clube == local){
-                //         Clubes[i].qtdinscritos = parseInt(Clubes[i].qtdinscritos) + 1;
-                //         Clubes[i].save();
-                //         break;
-                //     }
-                // }
 
                 res.status(200).json({msg: 'Inscrição realizada com sucesso!', res: true});
             }
