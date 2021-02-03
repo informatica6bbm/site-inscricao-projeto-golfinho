@@ -90,11 +90,11 @@ var app = new Vue({
                         this.erroCampos = false;
                         if(this.descricaoAtendimento) {
                             // parsInt(this.idade) >= 8 &&
-                            if(parsInt(this.idade) <= 13) {
+                            if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14) {
                                 return true;
                             }
                             // parsInt(this.idade) >= 8 &&
-                            if(!(parsInt(this.idade) <= 13)) {
+                            if(!(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14)) {
                                 this.erroCampos = true;
                                 return false;
                             }
@@ -112,11 +112,11 @@ var app = new Vue({
                         if(this.descricaoAtendimento) {
                             if(this.descricaoAtendimento) {
                                 // parsInt(this.idade) >= 8 &&
-                                if(parsInt(this.idade) <= 13) {
+                                if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14) {
                                     return true;
                                 }
                                 // parsInt(this.idade) >= 8 &&
-                                if(!(parsInt(this.idade) <= 13)) {
+                                if(!(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14)) {
                                     this.erroCampos = true;
                                     return false;
                                 }
