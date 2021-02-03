@@ -191,6 +191,7 @@ var app = new Vue({
             }
         },
     }
+    }
 });
 
 document.getElementById('links').onclick = function(event) {
