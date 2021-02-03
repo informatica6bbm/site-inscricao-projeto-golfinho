@@ -89,15 +89,17 @@ var app = new Vue({
                     if(deficiencia) {
                         this.erroCampos = false;
                         if(this.descricaoAtendimento) {
-                            if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14) {
+                            // parsInt(this.idade) >= 8 &&
+                            if(parsInt(this.idade) <= 13) {
                                 return true;
                             }
                             // parsInt(this.idade) >= 8 &&
-                            if(parseInt(this.idade) < 8 && parseInt(this.idade) > 14) {
+                            if(!(parsInt(this.idade) <= 13)) {
                                 this.erroCampos = true;
                                 return false;
                             }
                         }
+                    }
 
                         if(!this.descricaoAtendimento) {
                             this.erroCampos = true;
@@ -108,13 +110,16 @@ var app = new Vue({
                     if(!deficiencia) {
                         // parseInt(this.idade) >= 8 &&
                         if(this.descricaoAtendimento) {
-                            if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14) {
-                                return true;
-                            }
-                            // parsInt(this.idade) >= 8 &&
-                            if(parseInt(this.idade) < 8 && parseInt(this.idade) > 14) {
-                                this.erroCampos = true;
-                                return false;
+                            if(this.descricaoAtendimento) {
+                                // parsInt(this.idade) >= 8 &&
+                                if(parsInt(this.idade) <= 13) {
+                                    return true;
+                                }
+                                // parsInt(this.idade) >= 8 &&
+                                if(!(parsInt(this.idade) <= 13)) {
+                                    this.erroCampos = true;
+                                    return false;
+                                }
                             }
                     }
                 }
@@ -122,7 +127,7 @@ var app = new Vue({
             this.inscricaoSucesso = false;
             this.erroCampos = true;
             return false;
-        };
+        },
         inscrever() {
             var data = {
                 nomeCompleto: this.nomeCompleto,
@@ -189,8 +194,7 @@ var app = new Vue({
             if(!this.validaCampos()) {
                 $('#modalAceite').modal('hide');
             }
-        };
-    }
+        },
     }
 });
 
