@@ -59,11 +59,11 @@ var app = new Vue({
             }
         },
         cidade(val){
-            
+            if(val){
                 axios.get("https://projetogolfinho.herokuapp.com/pessoa/Clubescidade/" + val).then(response => {
                     this.clubes = response.data;
                 });
-            
+            }
         }
     },
     methods: {
@@ -80,53 +80,46 @@ var app = new Vue({
                 this.estado &&
                 this.local
             ) {
-                if(!this.cpf && !this.rg){
-                    return false;
-                }
+            if(!this.cpf  && !this.rg){
+                return false;
+            }
 
-                if(this.cpf && !this.rg || !this.cpf && this.rg || this.cpf && this.rg) {
-                    var deficiencia = (this.deficiencia === 'true');
-                    if(deficiencia) {
-                        this.erroCampos = false;
-                        if(this.descricaoAtendimento) {
-                            // parsInt(this.idade) >= 8 &&
-                            if(parsInt(this.idade) <= 13) {
-                                return true;
-                            }
-                            // parsInt(this.idade) >= 8 &&
-                            if(!(parsInt(this.idade) <= 13)) {
-                                this.erroCampos = true;
-                                return false;
-                            }
+            if(this.cpf && !this.rg || !this.cpf && this.rg || this.cpf && this.rg) {
+                console.log(this.deficiencia == "true");
+                if(this.deficiencia == "true") {
+                    this.erroCampos = false;
+                    if(this.descricaoAtendimento) {
+                        if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14) {
+                            return true;
                         }
-                    }
-
-                        if(!this.descricaoAtendimento) {
+                        if(parseInt(this.idade) < 8 && parseInt(this.idade) > 14) {
                             this.erroCampos = true;
                             return false;
                         }
                     }
 
-                    if(!deficiencia) {
-                        // parseInt(this.idade) >= 8 &&
-                        if(this.descricaoAtendimento) {
-                            if(this.descricaoAtendimento) {
-                                // parsInt(this.idade) >= 8 &&
-                                if(parsInt(this.idade) <= 13) {
-                                    return true;
-                                }
-                                // parsInt(this.idade) >= 8 &&
-                                if(!(parsInt(this.idade) <= 13)) {
-                                    this.erroCampos = true;
-                                    return false;
-                                }
-                            }
+                    if(!this.descricaoAtendimento) {
+                        this.erroCampos = true;
+                        return false;
+                    }
+                }
+
+                if(this.deficiencia == "false") {
+                    if(parseInt(this.idade) >= 8 && parseInt(this.idade) <= 14) {
+                        return true;
+                    }
+
+                    if(parseInt(this.idade) < 8 && parseInt(this.idade) > 14) {
+                        this.erroCampos = true;
+                        return false;
                     }
                 }
             }
+
             this.inscricaoSucesso = false;
             this.erroCampos = true;
             return false;
+            }
         },
         inscrever() {
             var data = {
@@ -155,6 +148,7 @@ var app = new Vue({
                 }
 
                 axios.post('https://projetogolfinho.herokuapp.com/pessoa', data).then(response => {
+                // axios.post('http://localhost:3000/pessoa', data).then(response => {
                     if(response.data.res) {
                         $('#modalAceite').modal('hide');
                         this.inscricaoSucesso = true;
