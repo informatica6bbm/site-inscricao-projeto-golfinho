@@ -52,13 +52,9 @@ exports.avaliar = (req, res, next) => {
     var pergunta3 = req.body.pergunta3;
     var pergunta4 = req.body.pergunta4;
     var pergunta5 = req.body.pergunta5;
-    var pergunta6 = req.body.pergunta6;
-    var pergunta7 = req.body.pergunta7;
-    var pergunta8 = req.body.pergunta8;
-    var pergunta9 = req.body.pergunta9;
     var sugestao = req.body.sugestao;
 
-    async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, sugestao) {
+    async function accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, sugestao) {
         const doc = new GoogleSpreadsheet('1DWsv3cf0plMd6gVaiNQA8Um58dm_5uZxlH7kul7vJHo');
         await promisify(doc.useServiceAccountAuth)(creds);
         const info = await promisify(doc.getInfo)();
