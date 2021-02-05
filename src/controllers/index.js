@@ -27,15 +27,27 @@ exports.industrial = (req, res, next) => {
 exports.caramuru = (req, res, next) => {
     res.sendFile(path.resolve('public/caramuru.html'));
 }
-exports.campeche2 = (req, res, next) => {
-    res.sendFile(path.resolve('public/campeche2.html'));
+
+exports.campestre = (req, res, next) => {
+    res.sendFile(path.resolve('public/campestre.html'));
 }
 exports.cachenere = (req, res, next) => {
     res.sendFile(path.resolve('public/cachenere.html'));
 }
-
+exports.sitio = (req, res, next) => {
+    res.sendFile(path.resolve('public/sitio.html'));
+}
 exports.estancia = (req, res, next) => {
     res.sendFile(path.resolve('public/estancia.html'));
+}
+exports.tropeiro = (req, res, next) => {
+    res.sendFile(path.resolve('public/tropeiro.html'));
+}
+exports.country = (req, res, next) => {
+    res.sendFile(path.resolve('public/country.html'));
+}
+exports.goioen = (req, res, next) => {
+    res.sendFile(path.resolve('public/goioen.html'));
 }
 exports.arvoredo = (req, res, next) => {
     res.sendFile(path.resolve('public/arvoredo.html'));
