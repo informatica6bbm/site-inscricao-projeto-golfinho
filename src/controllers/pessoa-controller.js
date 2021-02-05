@@ -81,7 +81,7 @@ exports.avaliar = (req, res, next) => {
         res.status(200).json(true);
     }
 
-    accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, sugestao);
+    accessSpreadsheet(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5,sugestao);
 }
 
 exports.getCidades = (req, res, next) => {
