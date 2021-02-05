@@ -27,7 +27,6 @@ exports.industrial = (req, res, next) => {
 exports.caramuru = (req, res, next) => {
     res.sendFile(path.resolve('public/caramuru.html'));
 }
-
 exports.campeche2 = (req, res, next) => {
     res.sendFile(path.resolve('public/campeche2.html'));
 }
@@ -38,8 +37,6 @@ exports.cachenere = (req, res, next) => {
 exports.estancia = (req, res, next) => {
     res.sendFile(path.resolve('public/estancia.html'));
 }
-
-
 exports.arvoredo = (req, res, next) => {
     res.sendFile(path.resolve('public/arvoredo.html'));
 }
