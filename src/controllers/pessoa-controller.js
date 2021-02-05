@@ -77,10 +77,6 @@ exports.avaliar = (req, res, next) => {
             pergunta3: pergunta3,
             pergunta4: pergunta4,
             pergunta5: pergunta5,
-            pergunta6: pergunta6,
-            pergunta7: pergunta7,
-            pergunta8: pergunta8,
-            pergunta9: pergunta9,
             sugestao: sugestao
         }
 

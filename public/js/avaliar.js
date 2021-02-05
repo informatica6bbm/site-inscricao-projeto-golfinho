@@ -6,10 +6,6 @@ var app = new Vue({
         pergunta3: "",
         pergunta4: "",
         pergunta5: "",
-        pergunta6: "",
-        pergunta7: "",
-        pergunta8: "",
-        pergunta9: "",
         sugestao: "",
         exibeFormulario: true,
     },
@@ -27,7 +23,7 @@ var app = new Vue({
     },
     methods: {
         validaCampos() {
-            if(this.pergunta1 && this.pergunta2 && this.pergunta3 && this.pergunta4 && this.pergunta5 && this.pergunta6 && this.pergunta7 && this.pergunta8 && this.pergunta9) {
+            if(this.pergunta1 && this.pergunta2 && this.pergunta3 && this.pergunta4 && this.pergunta5) {
                 return true;
             }
             return false;
@@ -40,10 +36,6 @@ var app = new Vue({
                     pergunta3: this.pergunta3,
                     pergunta4: this.pergunta4,
                     pergunta5: this.pergunta5,
-                    pergunta6: this.pergunta6,
-                    pergunta7: this.pergunta7,
-                    pergunta8: this.pergunta8,
-                    pergunta9: this.pergunta9,
                     sugestao: this.sugestao
                 }
 
