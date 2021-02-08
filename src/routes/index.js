@@ -26,5 +26,6 @@ router.get('/seara', controller.seara);
 router.get('paial', controller.paial);
 router.get('/ita', controller.ita);
 router.get('/concordia', controller.concordia);
+router.get('/campeche2', controller.campeche2);
 
 module.exports = router;
