@@ -73,3 +73,6 @@ exports.ita = (req, res, next) => {
 exports.concordia = (req, res, next) => {
     res.sendFile(path.resolve('public/concordia.html'));
 }
+exports.campeche2 = (req, res, next) => {
+    res.sendFile(path.resolve('public/campeche2.html'));
+}
